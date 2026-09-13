@@ -3,11 +3,11 @@ package main
 import (
 	"fmt"
 
-	"url-shortener/internal/config"
+	"github.com/Paheter1/url-shortener/internal/config"
 )
 
 func main() {
 	cfg := config.MustLoad()
 
-	fmt.Printf(cfg)
+	fmt.Println(cfg)
 }
