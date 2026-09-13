@@ -1,5 +1,13 @@
 package main
 
-func main() {
+import (
+	"fmt"
 
+	"url-shortener/internal/config"
+)
+
+func main() {
+	cfg := config.MustLoad()
+
+	fmt.Printf(cfg)
 }
