@@ -10,5 +10,15 @@ type Server struct {
 }
 
 func NewServer(address string, timeout, idleTimeout time.Duration) *Server {
-	return &Server{}
+	return &Server{
+		httpServer: &http.Server{
+			Addr:        address,
+			ReadTimeout: timeout,
+			IdleTimeout: idleTimeout,
+		},
+	}
+}
+
+func (s *Server) Start() error {
+	return s.httpServer.ListenAndServe()
 }
